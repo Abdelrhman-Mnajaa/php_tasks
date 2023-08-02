@@ -1,9 +1,9 @@
 
 
 
-// 2.	Write a PHP script to check the season depending on the inserted temperature if the temperature is below 20, we are in winter otherwise the season is summer.
+<!-- // 2.	Write a PHP script to check the season depending on the inserted temperature if the temperature is below 20, we are in winter otherwise the season is summer.
 // Sample Input: 27
-// Sample Output: ‘It is summertime!’
+// Sample Output: ‘It is summertime!’ -->
 
 <?php
 function getSeason($temperature) {
