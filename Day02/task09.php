@@ -10,7 +10,13 @@ Expected Result : First difference between two strings at position 7: "a" vs "o"
 
 
 function findChar(){
-echo "b";
+
+    echo "a";
+    echo "b";
+    echo "c";
+    echo "d";
+    echo "e";
+
 };
 
 
