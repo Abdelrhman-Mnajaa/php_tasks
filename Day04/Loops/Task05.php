@@ -1,12 +1,17 @@
 <?php
-for ($i = 1; $i <= 5; $i++) {
-    for ($j = 1; $j <= 5; $j++) {
-        if ($i == $j) {
-            echo "$i ";
-        } else {
-            echo "0 ";
-        }
+    
+    for( $x=1 ; $x < 6 ; $x++ )
+    {
+        echo "$x ";
+        for( $y=1 ; $y < 5 ; $y++ )
+    {
+        echo "0 ";
+       
+    
     }
-    echo PHP_EOL;
-}
-?>
+    echo "<br>";
+    }
+    
+    
+    
+    ?>

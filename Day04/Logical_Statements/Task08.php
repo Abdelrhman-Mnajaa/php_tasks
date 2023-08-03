@@ -1,35 +1,65 @@
-<!-- 
-// 8.	Write PHP script to calculate the monthly electricity bill according to these rules
- 
-// a.	For first 50 units – 2.50 JOD/Unit
-// b.	For next 100 units – 5.00 JOD/Unit
-// c.	For next 100 units – 6.20 JOD/Unit
-// d.	For units above 250 – 7.50 JOD/Unit -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="page-wrap">
+		<h1>Php - Calculate Electricity Bill</h1>
 
-<?php
-function calculateElectricityBill($units) {
-    $totalBill = 0;
+		<form action="" method='POST' id="quiz-form">
+            	<input type="number" name="units" id="units" placeholder="Please enter no. of Units" />
+            	<input type="submit" name="unit-submit" id="unit-submit" value="Submit" />
+		</form>
+       
+	</div>
 
-    if ($units <= 50) {
-        // For the first 50 units, the rate is 2.50 JOD per unit.
-        $totalBill = $units * 2.50;
-    } elseif ($units <= 150) {
-        // For the next 100 units (51-150), the rate is 5.00 JOD per unit.
-        $totalBill = 50 * 2.50 + ($units - 50) * 5.00;
-    } elseif ($units <= 250) {
-        // For the next 100 units (151-250), the rate is 6.20 JOD per unit.
-        $totalBill = 50 * 2.50 + 100 * 5.00 + ($units - 150) * 6.20;
-    } else {
-        // For units above 250, the rate is 7.50 JOD per unit.
-        $totalBill = 50 * 2.50 + 100 * 5.00 + 100 * 6.20 + ($units - 250) * 7.50;
-    }
+    <?php
+   $result_str = $result = '';
+   if (isset($_POST['unit-submit'])) {
+       $units = $_POST['units'];
+       if (!empty($units)) {
+           $result = calculate_bill($units);
+           $result_str = 'Total amount of ' . $units . ' = ' . $result;
+       }
+   }
+  
+   function calculate_bill($units) {
+       $unit_cost_first = 2.50;
+       $unit_cost_second = 5.00;
+       $unit_cost_third = 6.20;
+       $unit_cost_fourth = 7.50;
+   
+       if($units <= 50) {
+           $bill = $units * $unit_cost_first;
+       }
+       else if($units > 50 && $units <= 100) {
+           $temp = 50 * $unit_cost_first;
+           $remaining_units = $units - 50;
+           $bill = $temp + ($remaining_units * $unit_cost_second);
+       }
+       else if($units > 100 && $units <= 250) {
+           $temp = (50 * 3.5) + (100 * $unit_cost_second);
+           $remaining_units = $units - 150;
+           $bill = $temp + ($remaining_units * $unit_cost_third);
+       }
+       else {
+           $temp = (50 * 3.5) + (100 * $unit_cost_second) + (100 * $unit_cost_third);
+           $remaining_units = $units - 250;
+           $bill = $temp + ($remaining_units * $unit_cost_fourth);
+       }
+       return number_format((float)$bill, 2, '.', '');
+   }
 
-    return $totalBill;
-}
+ echo calculate_bill($units);
 
-// Sample Input
-$units = 300;
-
-$output = calculateElectricityBill($units);
-echo "Monthly Electricity Bill: " . $output . " JOD";
 ?>
+ <!-- <div>
+		    <?php 
+            echo '<br />' . $result_str; 
+            ?>
+		</div> -->
+</body>
+</html>

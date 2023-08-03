@@ -1,26 +1,36 @@
-<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method='POST'>
+<h2>Please input number x</h2>
+ <input type="text" name="x">
+ <h2>Please input number y</h2>
+ <input type="text" name="y">
+ <input type="submit" value="Submit x,y">
+ </form>
+<?php
 
-// 3.	Write a PHP script to calculate the sum of the two integers. If the two values are the same, then calculate the triple of their sum.
-// Sample Input: [ firstInteger  =>  2 , secondInteger => 2]
-// Sample Output: ( 2 + 2 ) * 3 = 12
-// Sample Output: ‘It is summertime!’
-  -->
+$x = $_POST['x'];
+$y= $_POST['y'];
+echo " $x + $y = ";
 
-  <?php
-function calculateSum($firstInteger, $secondInteger) {
-    $sum = $firstInteger + $secondInteger;
-    if ($firstInteger === $secondInteger) {
-        $tripleSum = $sum * 3;
-        return "( $firstInteger + $secondInteger ) * 3 = $tripleSum";
-    } else {
-        return "$firstInteger + $secondInteger = $sum";
-    }
+
+function test($x, $y) 
+{
+    if($x == $y) {
+        echo ($x+$y)*3;
+        echo "<pre>";
+        echo "It is summertime!";
+
+    } echo ($x+$y);
 }
-
-// Sample Input
-$firstInteger = 2;
-$secondInteger = 2;
-
-$output = calculateSum($firstInteger, $secondInteger);
-echo $output;
+echo test($x,$y);
 ?>
+</body>
+</html>

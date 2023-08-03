@@ -1,48 +1,47 @@
-<!-- 
-// 9.	 Write php script to make a calculator, the calculator should contain the four main operations 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form method='POST'>
+<h1>Simple Calculator</h1><br>
+First Number:<input name="n1" value=""><br>
+Second Number:<input name="n2" value=""><br>
+<input type="submit" name="sub" value="+">
+<input type="submit" name="sub" value="-">
+<input type="submit" name="sub" value="x">
+<input type="submit" name="sub" value="/"><br>
 
-// e.	Addition
-// f.	Subtraction
-// g.	Multiplication
-// h.	Division -->
+</form>
 
 <?php
-function add($num1, $num2) {
-    return $num1 + $num2;
+$n1=$_POST['n1'];
+$n2=$_POST['n2'];
+$oprnd=$_POST['sub'];
+$ans=0;
+function calculater($n1,$n2,$oprnd){
+	
+	if($oprnd=="+")
+		{$ans=$n1+$n2;
+        return $ans;}
+	else if($oprnd=="-")
+		{$ans=$n1-$n2;
+        return $ans;}
+	else if($oprnd=="x")
+		{$ans=$n1*$n2;
+        return $ans;}
+	else if($oprnd=="/")
+		{$ans=$n1/$n2;
+        return $ans;}
+
+      
 }
 
-function subtract($num1, $num2) {
-    return $num1 - $num2;
-}
-
-function multiply($num1, $num2) {
-    return $num1 * $num2;
-}
-
-function divide($num1, $num2) {
-    if ($num2 == 0) {
-        return "Cannot divide by zero!";
-    }
-    return $num1 / $num2;
-}
-
-// Sample Inputs
-$num1 = 10;
-$num2 = 5;
-
-// Addition
-$additionResult = add($num1, $num2);
-echo "Addition: " . $additionResult . "<br>";
-
-// Subtraction
-$subtractionResult = subtract($num1, $num2);
-echo "Subtraction: " . $subtractionResult . "<br>";
-
-// Multiplication
-$multiplicationResult = multiply($num1, $num2);
-echo "Multiplication: " . $multiplicationResult . "<br>";
-
-// Division
-$divisionResult = divide($num1, $num2);
-echo "Division: " . $divisionResult . "<br>";
+echo "Result :";
+echo calculater($n1,$n2,$oprnd);
 ?>
+</body>
+</html>

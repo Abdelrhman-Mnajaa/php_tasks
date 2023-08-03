@@ -1,19 +1,25 @@
-<!-- // 6.	Write a PHP script to check if the integer value is in the range of [20-50] inclusive.
-// Sample Input: number = 50
-// Sample Output: ‘true’ -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form method='POST'>
+<h2>Please input number x</h2>
+ <input type="text" name="x">
+ <input type="submit" value="Submit x">
+ </form>
 <?php
-function isInRange($number) {
-    // Check if the number is between 20 and 50 (inclusive).
-    return ($number >= 20 && $number <= 50);
+$n=$_POST['x'];
+function test ($n){
+    return $n >=20 && $n <=50 ;
 }
+echo "$n";
+echo"<br>";
 
-// Sample Input
-$number = 50;
-
-if (isInRange($number)) {
-    echo "true";
-} else {
-    echo "false";
-}
+var_dump(test($n));
 ?>
+</body>
+</html>

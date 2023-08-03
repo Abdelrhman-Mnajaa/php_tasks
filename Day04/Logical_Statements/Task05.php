@@ -1,19 +1,25 @@
-<!-- // 5.	Write in PHP script to check if the given positive number is a multiple of 3.
-// Sample Input: number = 20
-// Sample Output: ‘false’
- -->
- <?php
-function isMultipleOf3($number) {
-    // A number is a multiple of 3 if the remainder of division by 3 is 0.
-    return ($number % 3 === 0);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form method='POST'>
+<h2>Please input number x</h2>
+ <input type="text" name="x">
+ <input type="submit" value="Submit x">
+ </form>
+<?php
+$n=$_POST['x'];
+function test ($n){
+    return $n % 3== 0 ;
 }
+echo "$n";
+echo"<br>";
 
-// Sample Input
-$number = 20;
-
-if (isMultipleOf3($number)) {
-    echo "true";
-} else {
-    echo "false";
-}
+var_dump(test($n));
 ?>
+</body>
+</html>

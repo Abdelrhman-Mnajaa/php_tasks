@@ -1,15 +1,16 @@
-<?php
-function fibonacci($n) {
-    $fibonacciSequence = [0, 1];
-    for ($i = 2; $i < $n; $i++) {
-        $fibonacciSequence[$i] = $fibonacciSequence[$i - 1] + $fibonacciSequence[$i - 2];
-    }
-    return $fibonacciSequence;
-}
-
-// Sample Input
-$n = 10;
-
-$fibonacciSequence = fibonacci($n);
-echo implode(", ", $fibonacciSequence);
-?>
+<?php  
+$num = 0;  
+$n1 = 0;  
+$n2 = 1;  
+echo "<h3>Fibonacci series for first 12 numbers: </h3>";  
+echo "\n";  
+echo $n1.' '.$n2.' ';  
+while ($num < 10 )  
+{  
+    $n3 = $n2 + $n1;  
+    echo $n3.' ';  
+    $n1 = $n2;  
+    $n2 = $n3;  
+    $num = $num + 1;
+}  
+?>  

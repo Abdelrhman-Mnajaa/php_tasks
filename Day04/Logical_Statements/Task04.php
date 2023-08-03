@@ -1,17 +1,37 @@
-<!-- // 4.	Write PHP to check if the sum of the two given numbers equals 30, if the condition is true the return their sum otherwise return false
-// Sample Input: [ firstInteger  =>  10 , secondInteger => 10]
-// Sample Output: ‘false’ -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form method='POST'>
+<h2>Please input number x</h2>
+ <input type="text" name="x">
+ <h2>Please input number y</h2>
+ <input type="text" name="y">
+ <input type="submit" value="Submit x,y">
+ </form>
 <?php
-function checkSumEquals30($firstInteger, $secondInteger) {
-    $sum = $firstInteger + $secondInteger;
-    return ($sum === 30) ? $sum : false;
+
+$x = $_POST['x'];
+$y= $_POST['y'];
+$sum=$x+$y;
+echo " $x + $y = $sum ";
+
+
+function test($sum) 
+{
+    if($sum ==30) {
+       
+        echo "<pre>";
+        echo "the sum is :$sum";
+
+    } else{echo "False";
 }
-
-// Sample Input
-$firstInteger = 10;
-$secondInteger = 10;
-
-$output = checkSumEquals30($firstInteger, $secondInteger);
-echo $output;
+}
+echo test($sum);
 ?>
+</body>
+</html>
