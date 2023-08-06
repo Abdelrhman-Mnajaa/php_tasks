@@ -1,10 +1,53 @@
 <?php
-$num = 1;
-for ($i = 1; $i <= 5; $i++) {
-    for ($j = 1; $j <= $i; $j++) {
-        echo "$num ";
+    for( $x=0 ; $x <= 4 ; $x++ )
+    {
+        echo "1 ";
+    
     }
-    $num++;
-    echo PHP_EOL;
-}
-?>
+    echo"<br>";
+    
+    for( $x=0 ; $x < 3 ; $x++ )
+    {
+        echo "1 ";
+    
+    }
+    
+    for( $x=0 ; $x < 2 ; $x++ )
+    {
+        echo " 2";
+    
+    }
+    
+    echo"<br>";
+    
+    for( $x=0 ; $x < 2 ; $x++ )
+    {
+        echo "1 ";
+    
+    }
+    
+    for( $x=0 ; $x < 3 ; $x++ )
+    {
+        echo " 3";
+    
+    }
+    echo"<br>";
+    
+    for( $x=0 ; $x < 1 ; $x++ )
+    {
+        echo "1 ";
+    
+    }
+    for( $x=0 ; $x < 4 ; $x++ )
+    {
+        echo " 4";
+    
+    }
+    echo"<br>";
+    
+    for( $x=0 ; $x <= 4 ; $x++ )
+    {
+        echo "5 ";
+    
+    }
+    ?>

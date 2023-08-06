@@ -1,22 +1,29 @@
-<!-- // 11.	Write php script  to check whether a number is positive, negative or zero
-
-// Sample Input: -60
-// Sample Output: ‘Negative’ -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form method='POST'>
+<h2>Please input your name</h2>
+ <input type="text" name="n">
+ <input type="submit" value="Submit ">
+ </form>
 <?php
-function checkNumber($number) {
-    if ($number > 0) {
-        return 'Positive';
-    } elseif ($number < 0) {
-        return 'Negative';
-    } else {
-        return 'Zero';
-    }
+$n=$_POST['n'];
+
+function check($n){
+    if ($n > 0)
+    echo "The entered number $n is positive";
+elseif ($n < 0)
+    echo "The entered number $n is negative";
+else {
+    echo "The entered number $n is zero";
 }
-
-// Sample Input
-$number = -60;
-
-$output = checkNumber($number);
-echo $output;
+}
+echo check($n);
 ?>
+</body>
+</html>

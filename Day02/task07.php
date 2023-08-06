@@ -9,9 +9,12 @@ Expected Output: 254ABCc or h242sfeDAFEe32  -> random number  -->
 
 <?php 
 
-
-$str ='1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-
+function password_generate($chars) 
+{
+  $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+  return substr(str_shuffle($data), 0, $chars);
+}
+  echo password_generate(7)."\n";
 
 ?>
 

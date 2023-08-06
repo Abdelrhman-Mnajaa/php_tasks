@@ -1,21 +1,24 @@
-<?php
-$alphabets = range('A', 'Z');
-for ($i = 0; $i < 5; $i++) {
-    for ($j = 0; $j < 5 - $i; $j++) {
-        echo " ";
-    }
-    for ($k = 0; $k <= $i; $k++) {
-        echo $alphabets[$k] . " ";
-    }
-    echo PHP_EOL;
-}
-for ($i = 4; $i >= 0; $i--) {
-    for ($j = 0; $j < 5 - $i; $j++) {
-        echo " ";
-    }
-    for ($k = 0; $k <= $i; $k++) {
-        echo $alphabets[$k] . " ";
-    }
-    echo PHP_EOL;
-}
-?>
+<?php  
+$alpha = range('A', 'Z');  
+for ($i=5; $i>=1; $i--) {    
+  for($j=0; $j<=$i; $j++) {    
+     echo  "  ";    
+  }  
+  $j--;  
+for ($k=0; $k<=(5-$j); $k++) {    
+    echo $alpha[$k];   
+}    
+echo "<br>";  
+}  
+for ($i=3; $i>=0; $i--) { 
+    for($j=0; $j<=$i; $j++){
+        echo $alpha[$j];   
+    } 
+    echo "<br>";   
+   
+       
+    }  
+ 
+ 
+
+?>  

@@ -1,15 +1,9 @@
 <?php
-function factorial($num) {
-    $result = 1;
-    for ($i = 1; $i <= $num; $i++) {
-        $result *= $i;
-    }
-    return $result;
+$n = 6;
+$x = 1;
+for($i=1;$i<=$n-1;$i++)
+{
+ $x*=($i+1); 
 }
-
-// Sample Input
-$number = 5;
-
-$factorial = factorial($number);
-echo "Factorial of $number is: " . $factorial;
+echo "The factorial of  $n = $x"."\n";
 ?>
