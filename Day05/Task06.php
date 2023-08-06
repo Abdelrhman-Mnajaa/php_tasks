@@ -6,20 +6,36 @@ Sample Input:  407
 Expected Output: 407 is Armstrong Number  -->
 
 <?php
-function armstrong_number($num) {
-  $sl = strlen($num);
+function isArmstrongNumber($number) {
+  // Convert the number to a string to access its digits
+  $number_str = (string) $number;
+
+  // Get the number of digits in the input number
+  $num_digits = strlen($number_str);
+
+  // Initialize the sum of cubes of digits
   $sum = 0;
-  $num = (string)$num;
-  for ($i = 0; $i < $sl; $i++) {
-    $sum = $sum + pow((string)$num{$i},$sl);
+
+  // Calculate the sum of cubes of digits
+  for ($i = 0; $i < $num_digits; $i++) {
+      $digit = (int) $number_str[$i];
+      $sum += pow($digit, 3);
   }
-  if ((string)$sum == (string)$num) {
-    return "True";
+
+  // Check if the sum is equal to the original number
+  if ($sum === $number) {
+      return true;
   } else {
-    return "False";
+      return false;
   }
 }
-echo "Is 153 Armstrong number? ".armstrong_number(153);
-echo "\nIs 21 Armstrong number? ".armstrong_number(21);
-echo "\nIs 4587 Armstrong number? ".armstrong_number(4587);"\n";
+
+// Test the function
+$number = 407;
+if (isArmstrongNumber($number)) {
+  echo $number . " is Armstrong Number";
+} else {
+  echo $number . " is not Armstrong Number";
+}
+
 ?>
